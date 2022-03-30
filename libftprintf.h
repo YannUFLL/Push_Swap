@@ -1,27 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_push_swap.h                                     :+:      :+:    :+:   */
+/*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ydumaine <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/25 20:07:56 by ydumaine          #+#    #+#             */
-/*   Updated: 2022/03/29 19:33:44 by ydumaine         ###   ########.fr       */
+/*   Created: 2022/03/15 19:23:47 by ydumaine          #+#    #+#             */
+/*   Updated: 2022/03/28 19:25:09 by ydumaine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#ifndef FT_PRINTF_H
+# define FT_PRINTF_H
 
-# include <stdio.h>
+# include <stdarg.h>
+# include <unistd.h>
 
-typedef struct i_list
-{
-	int				content;
-	struct i_list	*next;
-}	i_list;
-
-int	ft_atoi2(const char *str, int *error);
+int	ft_putnbr_base2(int nbr, char *base, int count);
+int	ft_putadd_base2(unsigned long long int nbr, int count);
+int	ft_select_f(long long int arg, char c, int count);
+int	ft_putnbr2(int n, int count);
+int	ft_putnbr_unsigned2(unsigned int n, int count);
+int	ft_putstr2(char *str, int count);
+int	ft_putchar2(char c, int count);
 int	ft_printf(const char *str, ...);
+int	ft_putnbr_r2(int n, int count);
 
 #endif 

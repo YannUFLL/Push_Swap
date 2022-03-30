@@ -6,12 +6,13 @@
 /*   By: ydumaine <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/25 19:39:52 by ydumaine          #+#    #+#             */
-/*   Updated: 2022/03/28 16:10:26 by ydumaine         ###   ########.fr       */
+/*   Updated: 2022/03/29 19:33:12 by ydumaine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_push_swap.h"
-
+#include "libft.h"
+#include "libftprintf.h"
 int	ft_atoi2(const char *str, int *error)
 {
 	int	i;
@@ -21,7 +22,6 @@ int	ft_atoi2(const char *str, int *error)
 	b = 0;
 	i = 0;
 	s = 0;
-	
 	if (str == NULL)
 	{
 		*error = 1;
@@ -45,5 +45,6 @@ int	ft_atoi2(const char *str, int *error)
 	if (s == 0)
 		b = -b;
 	return (b);
+
 }
 
