@@ -6,7 +6,7 @@
 /*   By: ydumaine <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/25 18:40:53 by ydumaine          #+#    #+#             */
-/*   Updated: 2022/03/30 12:00:16 by ydumaine         ###   ########.fr       */
+/*   Updated: 2022/03/30 20:46:05 by ydumaine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,67 +14,25 @@
 #include "printf.h"
 #include "libft.h"
 
-i_list	*ft_lsti_new(int content)
+#define sa; "ft_select1(&a, &b, 1, error);"
+#define sb; "ft_select1(&a, &b, 2, error);"
+#define ss; "ft_select1(&a, &b, 3, error);"
+#define pa; "ft_select1(&a, &b, 4, error);"
+#define pb; "ft_select2(&a, &b, 5, error);"
+#define ra; "ft_select2(&a, &b, 6, error);"
+#define rb; "ft_select2(&a, &b, 7, error);"
+#define rr; "ft_select2(&a, &b, 8, error);"
+#define rra; "ft_select3(&a, &b, 9, error);"
+#define rrb; "ft_select3(&a, &b, 10, error);"
+#define rrr; "ft_select3(&a, &b, 11, error);"
+#define pos; "pos->content;"
+#define pos++; "pos = pos->next;"
+
+void ft_algo(i_list **a, i_list **b)
 {
-	i_list	*ptr;
-
-	ptr = malloc(sizeof(i_list));
-	if (ptr == NULL)
-		return (NULL);
-	ptr->content = content;
-	ptr->next = NULL;
-	return (ptr);
-}
-
-i_list	*ft_lsti_clear(i_list **lst)
-{
-	i_list	*ptr;
-
-	ft_printf("Error");
-	ptr = *lst;
-	while (ptr)
-	{
-		*lst = ptr;
-		ptr = ptr->next;
-		free(*lst);
-	}
-	*lst = NULL;
-	return (NULL);
-}
-
-void	ft_swap_list(i_list *lst)
-{
-	int	tmp;
-
-	if (lst->next != NULL)
-	{
-		tmp = lst->content;
-		lst->content = (lst->next)->content;
-		(lst->next)->content =tmp;
-	}
-}	
-
-
-void	ft_push_list(i_list **a, i_list **b)
-{
-	i_list *ptr;
-
-	if (*b == NULL)
-	{
-		ptr = *a;
-		*b = ft_lsti_new((*a)->content);
-		*a = (*a)->next;
-		free(ptr);
-	}
-	else 
-	{
-		ptr = *b;
-		*b = ft_lsti_new((*a)->content);
-		(*b)->next = ptr;
-		ptr = *a;
-		*a = (*a)->next;
-		free(ptr);
-	}	
+	i_list *pos; 
+	while ((*a)->content0)
+		if (())
 }
 
 void	ft_rotate_list(i_list **a)
@@ -92,35 +50,7 @@ void	ft_rotate_list(i_list **a)
 		(*a) = (*a)->next;
 		ptr = ptr->next;
 		ptr->next = NULL;
-			
 	}
-}
-
-
-
-i_list	*ft_stack_filling(int argc, char **argv)
-{
-	int	i;
-	int error; 
-	i_list *top;
-	i_list *lst;
-  		
-	error = 0;
-	i = 1;
-	lst = NULL; 
-	top = ft_lsti_new(ft_atoi2(argv[i++], &error));
-	lst = top;
-	if (top == NULL)
-		return (ft_lsti_clear(&top));
-	while(i < argc)
-	{
-		lst->next = ft_lsti_new(ft_atoi2(argv[i], &error));
-		if (lst->next == NULL || error == 1)
-			return (ft_lsti_clear(&top));
-		lst = lst->next;
-		i++;
-	}
-	return (top);
 }
 
 int	main(int argc, char **argv)
