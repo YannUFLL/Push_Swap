@@ -6,7 +6,7 @@
 /*   By: ydumaine <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/30 17:49:38 by ydumaine          #+#    #+#             */
-/*   Updated: 2022/04/01 20:57:59 by ydumaine         ###   ########.fr       */
+/*   Updated: 2022/04/01 20:53:59 by ydumaine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,18 +62,15 @@ void	ft_check_list(int *error, i_list *lst)
 			break;
 		while(lst->next)
 		{	
-			lst = lst->next;
 			if (pos->content == lst->content)
 			{
 				*error = 1; 
 				break;
 			}
+			lst = lst->next;
 		}
 		if (*error == 0)
-		{
 			pos = pos->next;
-			lst = pos;
-		}
 	}
 }
 
@@ -88,9 +85,9 @@ i_list	*ft_stack_filling(int argc, char **argv)
 	i = 1;
 	lst = NULL;
 	top = ft_lsti_new(ft_atoi2(argv[i++], &error));
+	lst = top;
 	if (top == NULL)
 		return (ft_lsti_clear(&top, NULL));
-	lst = top;
 	while(i < argc)
 	{
 		lst->next = ft_lsti_new(ft_atoi2(argv[i], &error));

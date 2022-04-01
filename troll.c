@@ -6,13 +6,13 @@
 /*   By: ydumaine <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/30 10:51:01 by ydumaine          #+#    #+#             */
-/*   Updated: 2022/03/30 10:51:44 by ydumaine         ###   ########.fr       */
+/*   Updated: 2022/04/01 20:14:08 by ydumaine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h> 
  
-main(int t,int _,char *a) 
+main(int t, char **a, int _,) 
 { 
 return!0<t?t<3?main(-79,-13,a+main(-87,1-_,main(-86,0,a+1)+a)): 
 1,t<_?main(t+1,_,a):3,main(-94,-27+t,a)&&t==2?_<13? 

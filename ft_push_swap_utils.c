@@ -6,19 +6,25 @@
 /*   By: ydumaine <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/30 17:44:41 by ydumaine          #+#    #+#             */
-/*   Updated: 2022/03/30 17:45:48 by ydumaine         ###   ########.fr       */
+/*   Updated: 2022/04/01 18:05:38 by ydumaine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_swap_list(i_list *a)
-{
-	int	tmp;
+#include "ft_push_swap.h"
 
-	if (a->next != NULL)
+void	ft_swap_list(i_list **a)
+{
+	i_list	*tmp;
+	i_list 	*tmp2;
+
+	if ((*a)->next != NULL)
 	{
-		tmp = a->content;
-		a->content = (a->next)->content;
-		(a->next)->content =tmp;
+		tmp = ((*a)->next)->next;
+		tmp2 = (*a)->next;
+		((*a)->next)->next = *a;
+		(*a)->next = tmp;
+		*a = tmp2; 
+
 	}
 }
 
@@ -31,6 +37,7 @@ void	ft_push_list(i_list **a, i_list **b)
 		ptr = *a;
 		*b = ft_lsti_new((*a)->content);
 		*a = (*a)->next;
+		ptr = NULL;
 		free(ptr);
 	}
 	else 
@@ -40,6 +47,7 @@ void	ft_push_list(i_list **a, i_list **b)
 		(*b)->next = ptr;
 		ptr = *a;
 		*a = (*a)->next;
+		ptr = NULL;
 		free(ptr);
 	}	
 }
@@ -67,7 +75,7 @@ void	ft_reverse_rotate_list(i_list **a)
 	i_list *ptr;
 	i_list *ptrnext;
 
-	if (*a != NULL)
+	if (*a != NULL && (*a)->next != NULL)
 	{
 		ptr = *a;
 		ptrnext = (*a)->next;
