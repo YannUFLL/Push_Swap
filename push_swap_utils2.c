@@ -1,22 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_push_swap_utils2.c                              :+:      :+:    :+:   */
+/*   push_swap_utils2.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ydumaine <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/30 17:49:38 by ydumaine          #+#    #+#             */
-/*   Updated: 2022/04/01 20:53:59 by ydumaine         ###   ########.fr       */
+/*   Updated: 2022/04/03 12:18:29 by ydumaine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_push_swap.h"
+#include "push_swap.h"
 
-i_list	*ft_lsti_new(int content)
+t_li	*ft_lsti_new(int content)
 {
-	i_list	*ptr;
+	t_li	*ptr;
 
-	ptr = malloc(sizeof(i_list));
+	ptr = malloc(sizeof(t_li));
 	if (ptr == NULL)
 		return (NULL);
 	ptr->content = content;
@@ -24,9 +24,9 @@ i_list	*ft_lsti_new(int content)
 	return (ptr);
 }
 
-i_list	*ft_lsti_clear(i_list **a, i_list **b)
+t_li	*ft_lsti_clear(t_li **a, t_li **b)
 {
-	i_list	*ptr;
+	t_li	*ptr;
 
 	ft_printf("Error");
 	ptr = *a;
@@ -37,7 +37,7 @@ i_list	*ft_lsti_clear(i_list **a, i_list **b)
 		free(*a);
 	}
 	*a = NULL;
-	if ( b != NULL)
+	if (b != NULL)
 	{
 		ptr = *b;
 		while (ptr)
@@ -51,49 +51,65 @@ i_list	*ft_lsti_clear(i_list **a, i_list **b)
 	return (NULL);
 }
 
-void	ft_check_list(int *error, i_list *lst)
+void	ft_check_list(int *error, t_li *lst)
 {
-	i_list *pos;
+	t_li	*pos;
 
 	pos = lst;
 	while (pos->next && *error == 0)
 	{
 		if (pos->next == NULL)
-			break;
-		while(lst->next)
-		{	
+			break ;
+		while (lst->next)
+		{
+			lst = lst->next;
 			if (pos->content == lst->content)
 			{
-				*error = 1; 
-				break;
+				*error = 1;
+				break ;
 			}
-			lst = lst->next;
 		}
 		if (*error == 0)
+		{
 			pos = pos->next;
+			lst = pos;
+		}
 	}
 }
 
-i_list	*ft_stack_filling(int argc, char **argv)
+t_li	*ft_argv_withspace(t_li **lst, int *error, char *argv, int *u)
 {
-	int	i;
-	int error;
-	i_list *top;
-	i_list *lst;
+	while (argv[*u] != '\0')
+	{
+		(*lst)->next = ft_lsti_new(ft_atoi2(argv, error, u));
+		if ((*lst)->next == NULL || *error == 1)
+			return (NULL);
+		*lst = (*lst)->next;
+	}
+	*u = 0;
+	return (*lst);
+}
+
+t_li	*ft_stack_filling(int argc, char **argv)
+{
+	int		i;
+	int		u;
+	int		error;
+	t_li	*top;
+	t_li	*lst;
 
 	error = 0;
 	i = 1;
 	lst = NULL;
-	top = ft_lsti_new(ft_atoi2(argv[i++], &error));
-	lst = top;
+	u = 0;
+	top = ft_lsti_new(ft_atoi2(argv[i], &error, &u));
 	if (top == NULL)
 		return (ft_lsti_clear(&top, NULL));
-	while(i < argc)
+	lst = top;
+	while (i < argc)
 	{
-		lst->next = ft_lsti_new(ft_atoi2(argv[i], &error));
-		if (lst->next == NULL || error == 1)
+		if (!ft_argv_withspace(&lst, &error, argv[i], &u) || error == 1)
 			return (ft_lsti_clear(&top, NULL));
-		lst = lst->next;
 		i++;
 	}
 	ft_check_list(&error, top);

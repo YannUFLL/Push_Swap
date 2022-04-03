@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_push_swap_selectf.c                             :+:      :+:    :+:   */
+/*   push_swap_selectf.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ydumaine <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/30 17:48:39 by ydumaine          #+#    #+#             */
-/*   Updated: 2022/04/01 18:05:04 by ydumaine         ###   ########.fr       */
+/*   Updated: 2022/04/03 12:24:15 by ydumaine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_push_swap.h"
+#include "push_swap.h"
 
-void	ft_select1(i_list **a, i_list **b, int i)
+void	ft_select1(t_li **a, t_li **b, int i)
 {
 	if (i == 1)
 	{
@@ -37,7 +37,7 @@ void	ft_select1(i_list **a, i_list **b, int i)
 	}
 }
 
-void	ft_select2(i_list **a, i_list **b, int i)
+void	ft_select2(t_li **a, t_li **b, int i)
 {
 	if (i == 5)
 	{
@@ -62,8 +62,7 @@ void	ft_select2(i_list **a, i_list **b, int i)
 	}
 }
 
-
-void	ft_select3(i_list **a, i_list **b, int i)
+void	ft_select3(t_li **a, t_li **b, int i)
 {
 	if (i == 9)
 	{
