@@ -6,12 +6,12 @@
 #    By: ydumaine <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/02 12:48:02 by ydumaine          #+#    #+#              #
-#    Updated: 2022/04/01 22:18:19 by ydumaine         ###   ########.fr        #
+#    Updated: 2022/04/03 13:04:20 by ydumaine         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SRCS = ft_atoi2.c push_swap.c push_swap_utils.c push_swap_utils2.c\
-push_swap_selectf.c 
+push_swap_selectf.c push_swap_cmp.c push_swap_check.c  
 
 BIBL = libft.a libftprintf.a \
 

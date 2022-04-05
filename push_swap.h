@@ -6,7 +6,7 @@
 /*   By: ydumaine <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/25 20:07:56 by ydumaine          #+#    #+#             */
-/*   Updated: 2022/04/03 12:19:55 by ydumaine         ###   ########.fr       */
+/*   Updated: 2022/04/05 15:25:24 by ydumaine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,5 +34,14 @@ void	ft_select3(t_li **a, t_li **b, int i);
 t_li	*ft_lsti_new(int content);
 t_li	*ft_lsti_clear(t_li **a, t_li **b);
 t_li	*ft_stack_filling(int argc, char **argv);
+int		ft_cmp_2f(t_li **pos);
+int 	ft_cmp_fl(t_li **pos);
+int 	ft_cmp_sl(t_li **pos);
+int		ft_check_lb(t_li *pos);
+int		ft_check_la(t_li *pos);
+int		ft_count_int(t_li *pos);
+void	ft_print_list(t_li *a, t_li *b);
+t_li	*ft_delete_list(t_li **li, int pos);
+
 
 #endif 
