@@ -6,7 +6,7 @@
 /*   By: ydumaine <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/30 17:49:38 by ydumaine          #+#    #+#             */
-/*   Updated: 2022/04/03 12:18:29 by ydumaine         ###   ########.fr       */
+/*   Updated: 2022/04/07 22:40:27 by ydumaine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,7 +99,7 @@ t_li	*ft_stack_filling(int argc, char **argv)
 	t_li	*lst;
 
 	error = 0;
-	i = 1;
+	i = 1 
 	lst = NULL;
 	u = 0;
 	top = ft_lsti_new(ft_atoi2(argv[i], &error, &u));

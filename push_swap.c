@@ -6,7 +6,7 @@
 /*   By: ydumaine <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/25 18:40:53 by ydumaine          #+#    #+#             */
-/*   Updated: 2022/04/05 19:38:27 by ydumaine         ###   ########.fr       */
+/*   Updated: 2022/04/07 22:36:36 by ydumaine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,161 +74,176 @@ void ft_sort5(t_li **a, t_li **b)
 	PB;
 	if(ft_check_la(*a))
 		ft_sort3(a, b);
-	if (!ft_cmp_2f(b))
-			RB;
-	PA;
+	if (ft_cmp_ab(a, b))
+		PA;
+	else if (ft_cmp_ab(&((*a)->next)->next, b))
+		RRA;
 	if (ft_cmp_fl(a))
 		RA;
 	PA;
 }
 
-void ft_algo(t_li **a, t_li **b)
+void	ft_putontopa(t_li **a, t_li **b, int max)
 {
-	//int check; 
-	//int	temp; 
-	int size; 
-	
-	size = ft_count_int(*a);
-	if (size < 4 && ft_check_la(*a))
-		ft_sort3(a, b);
-	if (size < 6 && ft_check_la(*a))
-		ft_sort5(a, b);
+	int pos1;
+	int pos2;
+	t_li *top; 
+
+	top = *a;
+	pos1 = 0;
+	pos2 = 0; 
+	while (top)
+	{
+	   if (top->content < max)	
+		   break;  
+		pos1++;
+		top = top->next;
+	}
+	while (top)
+	{
+		pos2++;
+		top = top->next;
+	}
+	top = *a;
+	if (pos1 > pos2)
+	{
+		while (pos2--)
+			RRA;
+	}
 	else 
-
-	int max ;
-		
-		max = ft_detect_smaller(a, 20);
-		while (i < 20);
-		{
-			ft_putontop(a, max);
-			pb; 
-		}
-		
-
+	{
+		while (pos1--)
+			RA;
+	}
 }
-
-void	ft_sortb(t_li *b)
+int	ft_detect_maxb(t_li *b)
 {
+	int	value;
+	
+	value = -2147483648;
+	while(b)
+		{
+				if (b->content > value)
+			{
+					value = b->content;
+			}
+			 b = b->next;
+		}
+	return (value);
 }
 
 
-int	ft_detect_smaller(t_li *a, int chunk)
+int	ft_detect_maxa(t_li *a, int chunk)
 {
 	int ex_value; 
 	t_li *top;
 	int i; 
-	int	*tab;
-	int	max; 
+	int	max;
+   	int value;	
 
 	i = 0;
 	top = a;
+	value = a->content;
 	ex_value = -2147483648;
 	while (i < chunk)
 	{
 		while(a)
 			{
-					if (a->content < value && a->content > ex_value)
+				if (a->content < value && a->content > ex_value)
 				{
 						ex_value = value;
 						value = a->content;
 				}
 				 a = a->next;
 			}
+		a = top; 
+		ex_value = value;
+		while (a)
+		{
+			if (a->content > value)
+			{
+				value = a->content;
+				break;
+			}
+			a = a->next;
+		}
+		a = top;
 		i++;
 	}
 	max = value; 
 	return (max);
 }
-ft_putontopb(t_li *b, max)
+
+void ft_putontopb(t_li **b, t_li **a, int max)
 {
 	int pos1;
 	int pos2;
+	int c;
+	t_li *top;
 
+	c = 0;
+	top = *b;
 	pos1 = 0;
 	pos2 = 0; 
-	while (pos1 < (ft_count_int(*b) / 2))
+	while (top)
 	{
-	   if (a->content < max)	
+	   if (top->content == max)	
 		   break;  
 		pos1++;
-		b = b->next;
+		top = top->next;
 	}
-	while (b)
+	while (top)
 	{
-	   if (b->content < max)	
-		   break;  
 		pos2++;
-		b = b->next;
+		top = top->next;
 	}
-	b = top;
+	top = *b;
 	if (pos1 > pos2)
 	{
-		while (pos1)
-			rb;
+		while (pos2--)
+			RRB;
 	}
 	else 
 	{
-		while (pos2)
-			rrb;
+		while (pos1--)
+			RB;
 	}
 }
 
-ft_putontopa(t_li *a, max)
+void ft_algo(t_li **a, t_li **b)
 {
-	int pos1;
-	int pos2;
-
-	pos1 = 0;
-	pos2 = 0; 
-	while (pos1 < (ft_count_int(*a) / 2))
-	{
-	   if (a->content < max)	
-		   break;  
-		pos1++;
-		a = a->next;
-	}
-	while (a)
-	{
-	   if (a->content < max)	
-		   break;  
-		pos2++;
-		a = a->next;
-	}
-	a = top;
-	if (pos1 > pos2)
-	{
-		while (pos1)
-			ra;
-	}
-	else 
-	{
-		while (pos2)
-			rra;
-	}
-}
-
-int	*ft_chunkdetector(t_li *a, int chunk)
-{
-	int *ptr;
-	int	value;
+	int size; 
+	int max ;
 	int i;
-	int	max;
-	int	b;
-
-	i = 0;
-	b = ft_count_int(a);
-	ptr = malloc(sizeof(int) * (ft_count_int(a) / chunk) + 2);
-	value = -2147483648;
-	max = ft_search_highest(a, -2147483648, ft_count_int(a));
-	while (value != max)
-	{
-		value = ft_search_highest(a, value, chunk);
-		ptr[i] = value; 
-		i++;
+	
+	size = ft_count_int(*a);
+	if (size < 4 && ft_check_la(*a))
+		ft_sort3(a, b);
+	if (size < 6 && ft_check_la(*a))
+		ft_sort5(a, b);
+	else if(ft_check_la(*a))
+	{	
+		while (*a)
+		{
+			max = ft_detect_maxa(*a, 5);
+			i = 0;
+			while (i < 5 && *a)
+			{
+				ft_putontopa(a, b, max);
+				PB;
+				i++;
+			}
+		}
+		while (*b)
+		{
+			max = ft_detect_maxb(*b);
+			ft_putontopb(b, a, max);
+			PA; 
+		}
 	}
-	return (ptr);
 }
-#include <stdio.h>
+
+
 int	main(int argc, char **argv)
 {
 	t_li	*a;
@@ -242,7 +257,6 @@ int	main(int argc, char **argv)
 		ft_printf("Error");
 		return (0);
 	}
-	//ft_algo(&a, &b);
-	ft_chunkdetector(a, 20);
-	ft_print_list(a, b);
+	ft_algo(&a, &b);
+	//ft_print_list(a, b);
 }

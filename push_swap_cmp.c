@@ -6,7 +6,7 @@
 /*   By: ydumaine <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/03 12:43:45 by ydumaine          #+#    #+#             */
-/*   Updated: 2022/04/03 18:40:16 by ydumaine         ###   ########.fr       */
+/*   Updated: 2022/04/07 21:38:48 by ydumaine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,4 +65,14 @@ int ft_cmp_sl(t_li **pos)
 			return (0);
 	}
 	return (0);
+}
+int ft_cmp_ab(t_li **a, t_li **b)
+{
+
+		if ((*b)->content < (*a)->content)
+		{
+			return (1);
+		}
+		else 
+			return (0);
 }

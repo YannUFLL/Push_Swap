@@ -6,7 +6,7 @@
 /*   By: ydumaine <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/30 17:44:41 by ydumaine          #+#    #+#             */
-/*   Updated: 2022/04/05 19:38:30 by ydumaine         ###   ########.fr       */
+/*   Updated: 2022/04/07 18:47:35 by ydumaine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,10 @@ void	ft_push_list(t_li **a, t_li **b)
 		*b = ft_lsti_new((*a)->content);
 		(*b)->next = ptr;
 		ptr = *a;
-		*a = (*a)->next;
+		if ((*a)->next != NULL)
+			*a = (*a)->next;
+		else 
+			*a = NULL;
 		ptr = NULL;
 		free(ptr);
 	}	
@@ -88,5 +91,3 @@ void	ft_reverse_rotate_list(t_li **a)
 		*a = ptrnext;
 	}
 }
-
-int	ft_detect_smaller(

@@ -6,7 +6,7 @@
 /*   By: ydumaine <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/03 12:45:29 by ydumaine          #+#    #+#             */
-/*   Updated: 2022/04/03 21:04:29 by ydumaine         ###   ########.fr       */
+/*   Updated: 2022/04/06 20:25:28 by ydumaine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,11 +58,15 @@ int	ft_count_int(t_li *pos)
 {
 	int	i;
 
-	i = 1; 
-	while (pos->next)
-	{
-		pos = pos->next;
-		i++;
+	i = 1;
+   	if (pos != NULL)
+	{	
+		while (pos->next)
+		{
+			pos = pos->next;
+			i++;
+		}
+		return (i);
 	}
-	return (i);
+	return (0);
 }
