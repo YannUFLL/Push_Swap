@@ -6,7 +6,7 @@
 /*   By: ydumaine <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/03 12:43:45 by ydumaine          #+#    #+#             */
-/*   Updated: 2022/04/07 21:38:48 by ydumaine         ###   ########.fr       */
+/*   Updated: 2022/04/08 16:30:13 by ydumaine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_cmp_2f(t_li **pos)
 {
-	t_li *ptr;
+	t_li	*ptr;
 
 	if ((*pos)->next != NULL)
 	{
@@ -23,15 +23,15 @@ int	ft_cmp_2f(t_li **pos)
 		{
 			return (1);
 		}
-		else 
+		else
 			return (0);
 	}
 	return (0);
 }
 
-int ft_cmp_fl(t_li **pos)
+int	ft_cmp_fl(t_li **pos)
 {
-	t_li *ptr;
+	t_li	*ptr;
 
 	ptr = NULL;
 	if (*pos != NULL && (*pos)->next != NULL)
@@ -41,16 +41,16 @@ int ft_cmp_fl(t_li **pos)
 			ptr = ptr->next;
 		if (ptr->content < (*pos)->content)
 			return (1);
-		else 
+		else
 			return (0);
 	}
 	return (0);
 }
 
-int ft_cmp_sl(t_li **pos)
+int	ft_cmp_sl(t_li **pos)
 {
-	t_li *ptr;
-	t_li *ptr2;
+	t_li	*ptr;
+	t_li	*ptr2;
 
 	ptr = NULL;
 	ptr2 = (*pos)->next;
@@ -61,18 +61,18 @@ int ft_cmp_sl(t_li **pos)
 			ptr = ptr->next;
 		if (ptr->content < ptr2->content)
 			return (1);
-		else 
+		else
 			return (0);
 	}
 	return (0);
 }
-int ft_cmp_ab(t_li **a, t_li **b)
-{
 
-		if ((*b)->content < (*a)->content)
-		{
-			return (1);
-		}
-		else 
-			return (0);
+int	ft_cmp_ab(t_li **a, t_li **b)
+{
+	if ((*b)->content < (*a)->content)
+	{
+		return (1);
+	}
+	else
+		return (0);
 }

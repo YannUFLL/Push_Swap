@@ -6,7 +6,7 @@
 /*   By: ydumaine <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/03 12:45:29 by ydumaine          #+#    #+#             */
-/*   Updated: 2022/04/06 20:25:28 by ydumaine         ###   ########.fr       */
+/*   Updated: 2022/04/08 16:28:41 by ydumaine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,16 @@
 
 int	ft_check_lb(t_li *pos)
 {
-	int first;
+	int	first;
 	int	i;
 
 	i = 1;
 	first = pos->content;
 	if (pos->next == NULL)
 		return (0);
-	while(pos->next)
+	while (pos->next)
 	{
-		pos = pos->next; 
+		pos = pos->next;
 		if (pos->content > first)
 			return (i);
 		if (pos->next == NULL)
@@ -35,20 +35,20 @@ int	ft_check_lb(t_li *pos)
 
 int	ft_check_la(t_li *pos)
 {
-	int previous;
+	int	previous;
 
-	previous = pos->content;	
+	previous = pos->content;
 	if (pos->next == NULL)
 		return (0);
-	pos=pos->next;
-	while(pos)
+	pos = pos->next;
+	while (pos)
 	{
-		if (pos->content <	previous)
+		if (pos->content < previous)
 			return (1);
-		else 
+		else
 		{
 			previous = pos->content;
-			pos = pos->next; 
+			pos = pos->next;
 		}
 	}
 	return (0);
@@ -59,7 +59,7 @@ int	ft_count_int(t_li *pos)
 	int	i;
 
 	i = 1;
-   	if (pos != NULL)
+	if (pos != NULL)
 	{	
 		while (pos->next)
 		{

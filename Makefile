@@ -6,14 +6,15 @@
 #    By: ydumaine <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/02 12:48:02 by ydumaine          #+#    #+#              #
-#    Updated: 2022/04/03 13:04:20 by ydumaine         ###   ########.fr        #
+#    Updated: 2022/04/08 16:11:57 by ydumaine         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS = ft_atoi2.c push_swap.c push_swap_utils.c push_swap_utils2.c\
-push_swap_selectf.c push_swap_cmp.c push_swap_check.c  
+SRCS = ft_atoi2.c push_swap.c push_swap_utils1.c push_swap_utils2.c\
+push_swap_selectf.c push_swap_cmp.c push_swap_check.c\
+push_swap_algo.c push_swap_algo_utils1.c push_swap_algo_utils2.c\
 
-BIBL = libft.a libftprintf.a \
+BIBL = libft.a libftprintf.a\
 
 OBJS = ${SRCS:.c=.o}
 

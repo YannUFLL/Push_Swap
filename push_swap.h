@@ -6,7 +6,7 @@
 /*   By: ydumaine <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/25 20:07:56 by ydumaine          #+#    #+#             */
-/*   Updated: 2022/04/07 21:34:55 by ydumaine         ###   ########.fr       */
+/*   Updated: 2022/04/08 16:16:57 by ydumaine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,14 +35,24 @@ t_li	*ft_lsti_new(int content);
 t_li	*ft_lsti_clear(t_li **a, t_li **b);
 t_li	*ft_stack_filling(int argc, char **argv);
 int		ft_cmp_2f(t_li **pos);
-int 	ft_cmp_fl(t_li **pos);
-int 	ft_cmp_sl(t_li **pos);
+int		ft_cmp_fl(t_li **pos);
+int		ft_cmp_sl(t_li **pos);
 int		ft_cmp_ab(t_li **a, t_li **b);
 int		ft_check_lb(t_li *pos);
 int		ft_check_la(t_li *pos);
 int		ft_count_int(t_li *pos);
 void	ft_print_list(t_li *a, t_li *b);
 t_li	*ft_delete_list(t_li **li, int pos);
-
+void	ft_putontopa(t_li **a, t_li **b, int max);
+int		ft_detect_maxb(t_li *b);
+int		ft_detect_maxa(t_li *a, int chunk);
+void	ft_putontopb(t_li **b, t_li **a, int max);
+void	ft_sort3(t_li **a, t_li **b);
+void	ft_sort5(t_li **a, t_li **b);
+void	ft_sortall(t_li **a, t_li **b, int chunk);
+void	ft_algo(t_li **a, t_li **b);
+int		ft_detect_smaller(t_li *a, int ex_value, int value);
+void	ft_backupa(t_li **b, t_li **a, int pos1, int pos2);
+void	ft_backupb(t_li **b, t_li **a, int pos1, int pos2);
 
 #endif 
