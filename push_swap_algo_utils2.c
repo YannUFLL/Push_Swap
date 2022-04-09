@@ -6,7 +6,7 @@
 /*   By: ydumaine <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/08 15:54:52 by ydumaine          #+#    #+#             */
-/*   Updated: 2022/04/08 16:25:41 by ydumaine         ###   ########.fr       */
+/*   Updated: 2022/04/09 14:58:59 by ydumaine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,4 +38,20 @@ void	ft_backupa(t_li **b, t_li **a, int pos1, int pos2)
 		while (pos1--)
 			ft_select2(a, b, 6);
 	}
+}
+
+int	ft_detect_smaller2(t_li *a)
+{
+	int	value;
+
+	value = 2147483647;
+	while (a)
+	{
+		if (a->content < value)
+		{
+			value = a->content;
+		}
+		a = a->next;
+	}
+	return (value);
 }

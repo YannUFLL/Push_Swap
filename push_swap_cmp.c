@@ -6,7 +6,7 @@
 /*   By: ydumaine <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/03 12:43:45 by ydumaine          #+#    #+#             */
-/*   Updated: 2022/04/08 16:30:13 by ydumaine         ###   ########.fr       */
+/*   Updated: 2022/04/09 12:41:50 by ydumaine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ int	ft_cmp_sl(t_li **pos)
 
 int	ft_cmp_ab(t_li **a, t_li **b)
 {
-	if ((*b)->content < (*a)->content)
+	if ((*a)->content < (*b)->content)
 	{
 		return (1);
 	}

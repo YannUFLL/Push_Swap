@@ -6,7 +6,7 @@
 /*   By: ydumaine <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/08 13:57:02 by ydumaine          #+#    #+#             */
-/*   Updated: 2022/04/08 16:25:05 by ydumaine         ###   ########.fr       */
+/*   Updated: 2022/04/09 14:06:46 by ydumaine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,14 +23,14 @@ void	ft_putontopa(t_li **a, t_li **b, int max)
 	pos2 = 0;
 	while (top)
 	{
-		if (top->content < max)
+		if (top->content <= max)
 			break ;
 		pos1++;
 		top = top->next;
 	}
 	while (top)
 	{
-		if (top->content < max)
+		if (top->content <= max)
 			pos2 = 0;
 		pos2++;
 		top = top->next;

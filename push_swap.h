@@ -6,7 +6,7 @@
 /*   By: ydumaine <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/25 20:07:56 by ydumaine          #+#    #+#             */
-/*   Updated: 2022/04/08 16:16:57 by ydumaine         ###   ########.fr       */
+/*   Updated: 2022/04/09 13:48:47 by ydumaine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,5 +54,6 @@ void	ft_algo(t_li **a, t_li **b);
 int		ft_detect_smaller(t_li *a, int ex_value, int value);
 void	ft_backupa(t_li **b, t_li **a, int pos1, int pos2);
 void	ft_backupb(t_li **b, t_li **a, int pos1, int pos2);
+int		ft_detect_smaller2(t_li *a);
 
 #endif 
