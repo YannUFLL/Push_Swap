@@ -6,7 +6,7 @@
 /*   By: ydumaine <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/30 17:49:38 by ydumaine          #+#    #+#             */
-/*   Updated: 2022/04/08 16:30:39 by ydumaine         ###   ########.fr       */
+/*   Updated: 2022/04/11 16:38:58 by ydumaine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ t_li	*ft_lsti_clear(t_li **a, t_li **b)
 {
 	t_li	*ptr;
 
-	ft_printf("Error");
 	ptr = *a;
 	while (ptr)
 	{
